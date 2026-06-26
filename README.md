@@ -9,6 +9,39 @@ This project is a SaaS implementation and AI delivery simulation for a customer 
 
 This project demonstrates requirement understanding, BRD/PRD documentation, user stories, implementation planning, demo preparation, and training documentation for an AI-enabled customer experience workflow.
 
+
+# Workflow Diagram
+
+```mermaid
+flowchart TD
+    A[Customer submits support ticket] --> B[SaaS support platform receives ticket]
+    B --> C[AI-enabled classification workflow]
+    C --> D{Identify ticket category}
+    D --> E[Refund]
+    D --> F[Delivery Delay]
+    D --> G[Payment Issue]
+    D --> H[Damaged Product]
+    D --> I[Cancellation]
+    D --> J[Login Issue]
+    D --> K[General Query]
+    E --> L[Assign priority]
+    F --> L
+    G --> L
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+    L --> M[Route to correct support team]
+    M --> N[Support agent reviews ticket]
+    N --> O[Customer receives response]
+```
+
+
+
+
+
+
+
 ## Mock Client
 
 **Client Name:** UrbanCart  
