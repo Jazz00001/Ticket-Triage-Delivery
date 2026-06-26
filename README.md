@@ -189,19 +189,19 @@ The board includes task priorities, workflow statuses, review stages, and accept
 
 ### Jira Project Overview
 
-![Jira Overview](screenshots/jira-overview.png)
+![Jira Overview](evidence/jira_overview.png)
 
 ### Jira Board Overview
 
-![Jira Board Overview](screenshots/jira-board-overview.png)
+![Jira Board Overview](evidence/jira_board_overview.png)
 
 ### Jira List View
 
-![Jira List View](screenshots/jira-list-view.png)
+![Jira List View](evidence/jira_list_view.png)
 
 ### SaaS Ticketing Workflow Task
 
-![SaaS Ticketing Workflow Task](screenshots/jira-freshdesk-workflow-task.png)
+![SaaS Ticketing Workflow Task](evidence/jira_freshdesk_workflow_task.png)
 
 ---
 
@@ -211,19 +211,19 @@ The prototype demonstrates AI-assisted ticket triage by classifying customer mes
 
 ### Payment Issue Classification
 
-![Payment Issue Classification](screenshots/ticket-analysis-payment-issue.png)
+![Payment Issue Classification](evidence/ticket_analysis_payment_issue.png)
 
 ### Delivery Delay Classification
 
-![Delivery Delay Classification](screenshots/ticket-analysis-delivery-delay.png)
+![Delivery Delay Classification](evidence/ticket_analysis_delivery_delay.png)
 
 ### Damaged Product Classification
 
-![Damaged Product Classification](screenshots/ticket-analysis-damaged-product.png)
+![Damaged Product Classification](evidence/ticket_analysis_damaged_product.png)
 
 ### Login Issue Classification
 
-![Login Issue Classification](screenshots/ticket-analysis-login-issue.png)
+![Login Issue Classification](evidence/ticket_analysis_login_issue.png)
 
 ---
 
