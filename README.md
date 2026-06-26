@@ -254,7 +254,7 @@ Ticket-Triage-Delivery/
 │   ├── User-Stories.md
 │   ├── Implementation-Plan.md
 │   ├── Demo-Script.md
-│   └── Training-Guide.md
+│   
 │
 ├── prototype/
 │   └── index.html
