@@ -78,23 +78,6 @@ The proposed AI-enabled SaaS workflow will:
 - **Medium:** Refund pending, delivery delayed, cancellation request.
 - **Low:** General query, order status request, basic account help.
 
-## Repository Structure
-
-```text
-ai-cx-ticket-triage-delivery/
-├── README.md
-├── docs/
-│   ├── BRD.md
-│   ├── PRD.md
-│   ├── User-Stories.md
-│   ├── Implementation-Plan.md
-│   ├── Demo-Script.md
-│   └── Training-Guide.md
-├── sample-data/
-│   └── customer_tickets.csv
-└── screenshots/
-    └── workflow-diagram.md
-```
 
 ## Skills Demonstrated
 
