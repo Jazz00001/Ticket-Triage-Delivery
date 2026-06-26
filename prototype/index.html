@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Customer Support Ticket Triage Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      margin: 0;
+      padding: 0;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      color: #111827;
+    }
+
+    .subtitle {
+      color: #6b7280;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 130px;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 15px;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 18px;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      background: #2563eb;
+      color: white;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 18px;
+      background: #f9fafb;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #374151;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .value {
+      font-size: 20px;
+      font-weight: bold;
+      color: #111827;
+    }
+
+    .high {
+      color: #dc2626;
+    }
+
+    .medium {
+      color: #d97706;
+    }
+
+    .low {
+      color: #059669;
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 16px;
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+      color: #1e3a8a;
+      line-height: 1.5;
+    }
+
+    .examples {
+      margin-top: 25px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .example-btn {
+      background: #e5e7eb;
+      color: #111827;
+      margin: 6px 6px 0 0;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #6b7280;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 16px;
+    }
+
+    @media (max-width: 700px) {
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>AI-Powered Customer Support Ticket Triage</h1>
+    <p class="subtitle">
+      SaaS delivery simulation for classifying customer support tickets, assigning priority,
+      and routing cases to the correct support team. Created by Jagriti Banerjee as a portfolio
+      project for AI delivery and SaaS implementation understanding.
+    </p>
+
+    <label for="ticketInput">Customer Ticket Message</label>
+    <textarea id="ticketInput" placeholder="Example: My payment was deducted but the order was not placed. Please help urgently."></textarea>
+
+    <button onclick="analyzeTicket()">Analyze Ticket</button>
+
+    <div class="result-grid">
+      <div class="card">
+        <h3>Ticket Category</h3>
+        <div class="value" id="category">Not analyzed</div>
+      </div>
+
+      <div class="card">
+        <h3>Priority</h3>
+        <div class="value" id="priority">Not analyzed</div>
+      </div>
+
+      <div class="card">
+        <h3>Routing Team</h3>
+        <div class="value" id="team">Not analyzed</div>
+      </div>
+
+      <div class="card">
+        <h3>Suggested Action</h3>
+        <div class="value" id="action">Not analyzed</div>
+      </div>
+    </div>
+
+    <div class="examples">
+      <strong>Try sample tickets:</strong><br>
+      <button class="example-btn" onclick="setExample('My payment was deducted but my order was not placed. Please help urgently.')">Payment Issue</button>
+      <button class="example-btn" onclick="setExample('I have not received my order even after the expected delivery date.')">Delivery Delay</button>
+      <button class="example-btn" onclick="setExample('The product I received is damaged and I need a replacement immediately.')">Damaged Product</button>
+      <button class="example-btn" onclick="setExample('I cannot login to my account after resetting my password.')">Login Issue</button>
+    </div>
+
+    <div class="note">
+      This prototype uses rule-based logic to simulate an AI-assisted SaaS workflow.
+      It is designed to demonstrate requirement understanding, product workflow design,
+      ticket triage logic, and delivery documentation.
+    </div>
+
+    <div class="footer">
+      Disclaimer: This is an independent academic/portfolio simulation project and does not represent a live client implementation.
+    </div>
+  </div>
+
+  <script>
+    function setExample(text) {
+      document.getElementById("ticketInput").value = text;
+    }
+
+    function analyzeTicket() {
+      const message = document.getElementById("ticketInput").value.toLowerCase();
+
+      let category = "General Query";
+      let priority = "Low";
+      let team = "General Support Team";
+      let action = "Handle through standard support queue.";
+
+      if (message.includes("payment") || message.includes("deducted") || message.includes("money") || message.includes("charged")) {
+        category = "Payment Issue";
+        priority = "High";
+        team = "Payments Team";
+        action = "Validate transaction status and escalate if amount was deducted.";
+      } else if (message.includes("refund")) {
+        category = "Refund";
+        priority = "Medium";
+        team = "Billing & Refund Team";
+        action = "Check refund status and communicate expected resolution time.";
+      } else if (message.includes("delay") || message.includes("late") || message.includes("not received") || message.includes("delivery")) {
+        category = "Delivery Delay";
+        priority = "Medium";
+        team = "Logistics Team";
+        action = "Check shipment status and update customer with delivery timeline.";
+      } else if (message.includes("damaged") || message.includes("broken") || message.includes("defective")) {
+        category = "Damaged Product";
+        priority = "High";
+        team = "Returns & Replacement Team";
+        action = "Request product evidence and initiate replacement workflow.";
+      } else if (message.includes("cancel") || message.includes("cancellation")) {
+        category = "Cancellation";
+        priority = "Medium";
+        team = "Order Management Team";
+        action = "Check order stage and process cancellation eligibility.";
+      } else if (message.includes("login") || message.includes("password") || message.includes("account")) {
+        category = "Login Issue";
+        priority = "Low";
+        team = "Technical Support Team";
+        action = "Guide customer through account recovery or password reset.";
+      }
+
+      const priorityElement = document.getElementById("priority");
+      priorityElement.className = "value";
+
+      if (priority === "High") {
+        priorityElement.classList.add("high");
+      } else if (priority === "Medium") {
+        priorityElement.classList.add("medium");
+      } else {
+        priorityElement.classList.add("low");
+      }
+
+      document.getElementById("category").innerText = category;
+      document.getElementById("priority").innerText = priority;
+      document.getElementById("team").innerText = team;
+      document.getElementById("action").innerText = action;
+    }
+  </script>
+
+</body>
+</html>
