@@ -1,0 +1,11 @@
+ticket_id,customer_message,expected_category,expected_priority,routing_team
+TCK-001,My payment was deducted but my order was not placed. Please help urgently.,Payment Issue,High,Payments Team
+TCK-002,I have not received my order even after the expected delivery date.,Delivery Delay,Medium,Logistics Team
+TCK-003,I want to cancel my order because I placed it by mistake.,Cancellation,Medium,Order Management Team
+TCK-004,The product I received is damaged and I need a replacement immediately.,Damaged Product,High,Returns & Replacement Team
+TCK-005,Can you tell me the status of my refund?,Refund,Medium,Billing & Refund Team
+TCK-006,I cannot login to my account even after resetting my password.,Login Issue,Low,Technical Support Team
+TCK-007,Where can I update my delivery address?,General Query,Low,General Support Team
+TCK-008,This is my third complaint. My money is deducted and nobody is replying.,Payment Issue,High,Payments Team
+TCK-009,My order is late and I need it before tomorrow.,Delivery Delay,Medium,Logistics Team
+TCK-010,The item is broken and I am very disappointed with this service.,Damaged Product,High,Returns & Replacement Team
