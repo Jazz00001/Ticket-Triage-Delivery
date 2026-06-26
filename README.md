@@ -19,10 +19,22 @@
 
 **Created by: Jagriti Banerjee**
 
-[Live Prototype](https://jazz00001.github.io/Ticket-Triage-Delivery/prototype/) ·
-[GitHub Repository](https://github.com/Jazz00001/Ticket-Triage-Delivery)
+[Live Prototype](https://jazz00001.github.io/Ticket-Triage-Delivery/prototype/) · 
+[GitHub Repository](https://github.com/Jazz00001/Ticket-Triage-Delivery) · 
+[Jira Agile Board](https://banerjeej100-1782477628404.atlassian.net/jira/software/projects/KAN/summary)
 
 </div>
+
+---
+
+## Project Links
+
+| Resource          | Link                                                                                                   |
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+| Live Prototype    | [Open Prototype](https://jazz00001.github.io/Ticket-Triage-Delivery/prototype/)                        |
+| GitHub Repository | [View Repository](https://github.com/Jazz00001/Ticket-Triage-Delivery)                                 |
+| Jira Agile Board  | [View Jira Board](https://banerjeej100-1782477628404.atlassian.net/jira/software/projects/KAN/summary) |
+
 
 ---
 
